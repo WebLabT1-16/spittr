@@ -108,16 +108,22 @@ public class Spitter {
         if (!userName.equals(spitter.userName)) return false;
         if (!password.equals(spitter.password)) return false;
         if (!firstName.equals(spitter.firstName)) return false;
+        if (!email.equals(spitter.email)) return false;
         return lastName.equals(spitter.lastName);
 
     }
 
     @Override
     public int hashCode() {
-        int result = userName.hashCode();
-        result = 31 * result + password.hashCode();
-        result = 31 * result + firstName.hashCode();
-        result = 31 * result + lastName.hashCode();
-        return result;
+        if (userName==null) { //checking this because the first time registerForm uses an empty Spitter() with null atts
+            return 1;
+        } else {
+            int result = userName.hashCode();
+            result = 31 * result + password.hashCode();
+            result = 31 * result + firstName.hashCode();
+            result = 31 * result + lastName.hashCode();
+            result = 31 * result + email.hashCode();
+            return result;
+        }
     }
 }

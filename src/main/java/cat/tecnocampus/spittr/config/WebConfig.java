@@ -7,7 +7,10 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+import org.thymeleaf.templateresolver.TemplateResolver;
 
 /**
  * Created by roure on 19/07/2016.
@@ -20,6 +23,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     /*
     This resolver if for serving jsp pages. It uses the InternalResourceViewResolver
      */
+/*
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -28,7 +32,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
     }
-/*
+*/
 
     @Bean
     public ViewResolver viewResolver(SpringTemplateEngine templateEngine) {
@@ -47,12 +51,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TemplateResolver templateResolver() {
         TemplateResolver templateResolver = new ServletContextTemplateResolver();
-        templateResolver.setPrefix("/WEB-INF/templates/");
+        templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode("HTML5");
         return templateResolver;
     }
-*/
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {

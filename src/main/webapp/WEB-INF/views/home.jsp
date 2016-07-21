@@ -17,7 +17,7 @@
 <body>
 <h1>Welcome to InitMVC</h1>
 
-<a href="<c:url value="/cat.tecnocampus.initmvc/spittles" />" >Spittles</a>
-<a href="<c:url value="/cat.tecnocampus.initmvc/register" />" >Register</a>
+<a href="<c:url value="/spittles" />" >Spittles</a>
+<a href="<c:url value="/spitter/register" />" >Register</a>
 </body>
 </html>

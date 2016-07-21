@@ -20,12 +20,12 @@ import javax.validation.Valid;
 public class SpitterController {
     private final SpitterRepository spitterRepository;
 
-    //@Autowired
+    @Autowired
     public SpitterController(SpitterRepository spitterRepository) {
         this.spitterRepository = spitterRepository;
     }
 
-    @RequestMapping(value = "register", method = RequestMethod.GET)
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String showRegistrationForm() {
         return "registerForm";
     }

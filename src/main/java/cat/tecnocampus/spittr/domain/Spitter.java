@@ -25,19 +25,33 @@ public class Spitter {
     @Size(min=2, max=30)
     private String lastName;
 
-    public Spitter(String username, String password, String firstName, String lastName) {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @NotNull
+    @Size(min = 5, max = 80)
+    private String email;
+
+    public Spitter(String username, String password, String firstName, String lastName, String email) {
         this.userName = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
     }
 
-    public Spitter(Long id, String username, String password, String firstName, String lastName) {
+    public Spitter(Long id, String username, String password, String firstName, String lastName, String email) {
         this.id = id;
         this.userName = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
     }
 
     public Spitter() {

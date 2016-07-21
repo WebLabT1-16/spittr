@@ -21,7 +21,7 @@ public class SpittleController {
     private final SpittleRepository spittleRepository;
     private static final String MAX_LOG_VALUE_AS_STRING = "9223372036854775807"; //Long.toString(Long.MAX_VALUE);
 
-    //@Autowired
+    @Autowired
     public SpittleController(SpittleRepository spittleRepository) {
         this.spittleRepository = spittleRepository;
     }
